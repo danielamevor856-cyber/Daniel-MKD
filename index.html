@@ -1,15 +1,77 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Mon premier site</title>
-</head>
-<body>
-    <h1>Bonjour ! 👋</h1>
-    <p>Bienvenue sur mon premier site.</p>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel-MKD</title>
 
-    <button onclick="alert('Bravo ! Ton code fonctionne 🎉')">
-        Clique ici
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #111827, #2563eb);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      padding: 40px 25px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 25px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 19px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background: white;
+      color: #2563eb;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Bienvenue 👋</h1>
+
+    <p>
+      Bienvenue sur mon site <strong>Daniel-MKD</strong>.
+    </p>
+
+    <button onclick="alert('Merci de visiter mon site ! 🎉')">
+      Clique ici 🚀
     </button>
+  </div>
+
 </body>
 </html>
