@@ -10,68 +10,164 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #111827, #2563eb);
+      background: linear-gradient(135deg, #071a3d, #1769e0);
       color: white;
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
     }
 
-    .container {
-      max-width: 600px;
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(5, 15, 35, 0.9);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+
+    section {
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
       width: 100%;
-      padding: 40px 25px;
-      background: rgba(255, 255, 255, 0.12);
+      max-width: 600px;
+      padding: 45px 25px;
       border-radius: 25px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 
     h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
+      font-size: 45px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
     }
 
     p {
-      font-size: 19px;
-      margin-bottom: 30px;
-    }
-
-    button {
-      background: white;
-      color: #2563eb;
-      border: none;
-      padding: 15px 30px;
-      border-radius: 30px;
       font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
+      line-height: 1.6;
+      margin-bottom: 25px;
     }
 
-    button:active {
-      transform: scale(0.95);
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background: white;
+      color: #1769e0;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .contact {
+      background: rgba(0,0,0,0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        margin-left: 7px;
+        font-size: 12px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
-    <h1>Bienvenue 👋</h1>
+  <header>
+    <div class="logo">Daniel-MKD</div>
+
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="accueil" class="hero">
+    <div class="card">
+      <h1>Bienvenue 👋</h1>
+
+      <p>
+        Bienvenue sur mon site <strong>Daniel-MKD</strong>.
+      </p>
+
+      <a class="btn" href="#apropos">Découvrir 🚀</a>
+    </div>
+  </section>
+
+  <section id="apropos">
+    <h2>À propos 👤</h2>
 
     <p>
-      Bienvenue sur mon site <strong>Daniel-MKD</strong>.
+      Bienvenue sur mon espace personnel.
+      Ici, tu peux découvrir mes projets, mes activités
+      et mes informations.
+    </p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact 📞</h2>
+
+    <p>
+      Merci de visiter mon site Daniel-MKD.
     </p>
 
-    <button onclick="alert('Merci de visiter mon site ! 🎉')">
-      Clique ici 🚀
-    </button>
-  </div>
+    <a class="btn" href="mailto:contact@example.com">
+      Me contacter ✉️
+    </a>
+  </section>
+
+  <footer>
+    © 2026 Daniel-MKD — Tous droits réservés.
+  </footer>
 
 </body>
 </html>
+  
+
+  
