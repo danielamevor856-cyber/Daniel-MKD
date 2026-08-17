@@ -3,171 +3,192 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daniel-MKD</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
-    }
+  <title>AMEVOR Daniel | Développeur</title>
 
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #071a3d, #1769e0);
-      color: white;
-      min-height: 100vh;
-    }
+  <meta
+    name="description"
+    content="Portfolio de AMEVOR Daniel, développeur passionné par l'informatique et le développement web."
+  >
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(5, 15, 35, 0.9);
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 15px;
-      font-size: 14px;
-    }
-
-    section {
-      padding: 70px 20px;
-      text-align: center;
-    }
-
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .card {
-      width: 100%;
-      max-width: 600px;
-      padding: 45px 25px;
-      border-radius: 25px;
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    }
-
-    h1 {
-      font-size: 45px;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      font-size: 30px;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 25px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 15px 30px;
-      background: white;
-      color: #1769e0;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 17px;
-    }
-
-    .contact {
-      background: rgba(0,0,0,0.2);
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: rgba(0,0,0,0.3);
-    }
-
-    @media (max-width: 600px) {
-      nav a {
-        margin-left: 7px;
-        font-size: 12px;
-      }
-
-      h1 {
-        font-size: 36px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">Daniel-MKD</div>
+  <header class="header">
+    <nav class="navbar">
+      <h1 class="logo">&lt;Daniel /&gt;</h1>
 
-    <nav>
-      <a href="#accueil">Accueil</a>
-      <a href="#apropos">À propos</a>
-      <a href="#contact">Contact</a>
+      <ul class="nav-links">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
-  <section id="accueil" class="hero">
-    <div class="card">
-      <h1>Bienvenue 👋</h1>
+  <main>
+
+    <section id="accueil" class="hero">
+      <div class="hero-content">
+        <p class="badge">👨‍💻 Développeur en construction</p>
+
+        <h2>
+          Bonjour, je suis <span>Daniel</span>.
+        </h2>
+
+        <h3>Je construis le futur avec le code.</h3>
+
+        <p>
+          Passionné par l'informatique, le développement web et la création
+          de solutions numériques modernes.
+        </p>
+
+        <div class="buttons">
+          <a href="#projets" class="btn primary">Voir mes projets</a>
+          <a href="#contact" class="btn secondary">Me contacter</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="apropos" class="section">
+      <h2>À propos de moi</h2>
+
+      <div class="about">
+        <div>
+          <p>
+            Je suis un développeur passionné par la technologie et
+            l'apprentissage continu.
+          </p>
+
+          <p>
+            Mon objectif est de maîtriser progressivement le développement
+            frontend, backend, les bases de données, Git et les outils
+            professionnels utilisés dans l'industrie.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>🎯 Objectif</h3>
+          <p>
+            Devenir un développeur professionnel capable de créer des
+            applications modernes, rapides et sécurisées.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="competences" class="section">
+      <h2>Mes compétences</h2>
+
+      <div class="skills">
+
+        <div class="skill-card">
+          <span>🌐</span>
+          <h3>Frontend</h3>
+          <p>HTML • CSS • JavaScript</p>
+        </div>
+
+        <div class="skill-card">
+          <span>⚙️</span>
+          <h3>Backend</h3>
+          <p>Node.js • APIs • Bases de données</p>
+        </div>
+
+        <div class="skill-card">
+          <span>🐙</span>
+          <h3>Git & GitHub</h3>
+          <p>Repositories • Commits • Branches</p>
+        </div>
+
+        <div class="skill-card">
+          <span>💻</span>
+          <h3>Programmation</h3>
+          <p>Algorithmique • Logique • Résolution de problèmes</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="projets" class="section">
+      <h2>Mes projets</h2>
+
+      <div class="projects">
+
+        <article class="project-card">
+          <h3>🌐 Portfolio personnel</h3>
+          <p>
+            Création d'un portfolio responsive présentant mon parcours,
+            mes compétences et mes projets.
+          </p>
+
+          <div class="tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+
+          <a href="#" class="project-link">Voir le projet →</a>
+        </article>
+
+        <article class="project-card">
+          <h3>🧮 Calculatrice</h3>
+          <p>
+            Application web permettant d'effectuer des calculs simples
+            avec une interface moderne.
+          </p>
+
+          <div class="tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+
+          <a href="#" class="project-link">Voir le projet →</a>
+        </article>
+
+        <article class="project-card">
+          <h3>🚀 Projet à venir</h3>
+          <p>
+            Un nouveau projet sera ajouté ici au fur et à mesure de ma
+            progression en développement.
+          </p>
+
+          <div class="tags">
+            <span>Coming Soon</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2>Contact</h2>
 
       <p>
-        Bienvenue sur mon site <strong>Daniel-MKD</strong>.
+        Tu veux travailler avec moi ou suivre mon évolution ?
       </p>
 
-      <a class="btn" href="#apropos">Découvrir 🚀</a>
-    </div>
-  </section>
+      <a href="mailto:tonemail@example.com" class="btn primary">
+        Envoyer un email
+      </a>
+    </section>
 
-  <section id="apropos">
-    <h2>À propos 👤</h2>
-
-    <p>
-      Bienvenue sur mon espace personnel.
-      Ici, tu peux découvrir mes projets, mes activités
-      et mes informations.
-    </p>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2>Contact 📞</h2>
-
-    <p>
-      Merci de visiter mon site Daniel-MKD.
-    </p>
-
-    <a class="btn" href="mailto:contact@example.com">
-      Me contacter ✉️
-    </a>
-  </section>
+  </main>
 
   <footer>
-    © 2026 Daniel-MKD — Tous droits réservés.
+    <p>
+      © <span id="year"></span> AMEVOR Daniel — Développeur
+    </p>
   </footer>
 
+  <script src="script.js"></script>
+
 </body>
-</html>
+  </html>
   
 
   
