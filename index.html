@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description"
-        content="Portfolio professionnel de AMEVOR Daniel, développeur web.">
+        content="Portfolio professionnel de AMEVOR Daniel, développeur web et créateur de solutions numériques modernes.">
 
-  <title>AMEVOR Daniel | Daniel Développeur</title>
+  <meta name="theme-color" content="#070b1a">
+
+  <title>AMEVOR Daniel | Développeur Web</title>
 
   <style>
+    /* =========================
+       RESET
+    ========================= */
+
     * {
       margin: 0;
       padding: 0;
@@ -22,40 +28,75 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #050816;
-      color: white;
+      background: #070b1a;
+      color: #ffffff;
+      line-height: 1.7;
       overflow-x: hidden;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
     }
 
     /* =========================
-       NAVIGATION
+       BACKGROUND
+    ========================= */
+
+    body::before {
+      content: "";
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      background: #168cff;
+      border-radius: 50%;
+      filter: blur(150px);
+      opacity: 0.12;
+      top: 100px;
+      left: -180px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      background: #8b4dff;
+      border-radius: 50%;
+      filter: blur(150px);
+      opacity: 0.10;
+      right: -180px;
+      bottom: 100px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* =========================
+       HEADER
     ========================= */
 
     header {
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
       z-index: 1000;
-
-      background: rgba(5, 8, 22, 0.85);
-      backdrop-filter: blur(15px);
-
-      border-bottom: 1px solid rgba(100, 160, 255, 0.15);
+      background: rgba(7, 11, 26, 0.85);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    nav {
-      max-width: 1150px;
-      height: 75px;
-      margin: auto;
-
-      padding: 0 25px;
-
+    .nav {
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -64,25 +105,39 @@
     .logo {
       font-size: 22px;
       font-weight: 900;
+      letter-spacing: -0.5px;
     }
 
-    .logo-code {
-      color: #20d9ff;
+    .logo span {
+      color: #22d3ee;
+    }
+
+    .logo::before {
+      content: "</> ";
+      color: #22d3ee;
     }
 
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 28px;
-      color: #b8c5df;
-      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: #aab5d6;
+      font-size: 15px;
+      transition: 0.3s;
     }
 
     .nav-links a:hover {
-      color: #4fc3ff;
+      color: #ffffff;
     }
 
-    .menu {
+    .menu-btn {
       display: none;
+      background: none;
+      border: 0;
+      color: white;
       font-size: 30px;
       cursor: pointer;
     }
@@ -92,247 +147,132 @@
     ========================= */
 
     .hero {
-      min-height: 100vh;
-
-      max-width: 1150px;
-      margin: auto;
-
-      padding: 140px 25px 80px;
-
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
+      min-height: 90vh;
+      display: flex;
       align-items: center;
-      gap: 50px;
+      padding: 80px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      align-items: center;
     }
 
     .badge {
       display: inline-block;
-
-      padding: 10px 17px;
-
-      border-radius: 50px;
-
-      border: 1px solid rgba(30, 210, 255, 0.3);
-
-      color: #53ddff;
-
-      background: rgba(30, 210, 255, 0.05);
-
-      font-weight: bold;
+      padding: 10px 18px;
+      border: 1px solid rgba(34,211,238,0.35);
+      border-radius: 999px;
+      color: #55e7ff;
+      background: rgba(34,211,238,0.05);
       font-size: 13px;
-
-      letter-spacing: 1px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
     }
 
     .hero h1 {
-      font-size: clamp(55px, 7vw, 90px);
-      line-height: 0.95;
-
-      margin: 25px 0;
+      font-size: clamp(48px, 7vw, 86px);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      margin-bottom: 28px;
     }
 
     .gradient {
-      background: linear-gradient(
-        90deg,
-        #159cff,
-        #7167ff,
-        #c148ff
-      );
-
+      background: linear-gradient(90deg, #159cff, #7c5cff, #c653ff);
       -webkit-background-clip: text;
       background-clip: text;
-
       color: transparent;
     }
 
-    .hero-text {
-      color: #9aa9c5;
-
-      font-size: 18px;
-
-      line-height: 1.8;
-
-      max-width: 620px;
+    .hero p {
+      color: #9ba8cc;
+      font-size: 19px;
+      max-width: 650px;
+      margin-bottom: 35px;
     }
 
     .buttons {
-      margin-top: 30px;
-
       display: flex;
-      gap: 15px;
-
+      gap: 14px;
       flex-wrap: wrap;
     }
 
     .btn {
-      display: inline-block;
-
-      padding: 16px 24px;
-
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 24px;
       border-radius: 12px;
-
-      font-weight: bold;
-
-      border: 1px solid rgba(120, 160, 255, 0.2);
-
+      font-weight: 800;
       transition: 0.3s;
-    }
-
-    .btn:hover {
-      transform: translateY(-4px);
+      border: 1px solid transparent;
     }
 
     .btn-primary {
-      background: linear-gradient(
-        135deg,
-        #168cff,
-        #8057ff
-      );
+      background: linear-gradient(90deg, #168cff, #7457ff);
+      box-shadow: 0 15px 40px rgba(55,100,255,0.25);
+    }
 
-      box-shadow:
-        0 15px 45px rgba(60, 90, 255, 0.3);
+    .btn-primary:hover {
+      transform: translateY(-3px);
     }
 
     .btn-secondary {
-      background: rgba(10, 20, 45, 0.7);
+      border-color: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.03);
+      color: #dce4ff;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
     }
 
     /* =========================
-       GLOBE
+       CODE CARD
     ========================= */
 
-    .visual {
-      min-height: 500px;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      position: relative;
-    }
-
-    .globe {
-      width: 380px;
-      height: 380px;
-
-      border-radius: 50%;
-
-      position: relative;
-
-      background:
-        radial-gradient(
-          circle at 35% 30%,
-          #58e7ff,
-          #1978ff 22%,
-          #092b67 48%,
-          #020712 72%
-        );
-
-      border: 2px solid rgba(50, 190, 255, 0.6);
-
-      box-shadow:
-        0 0 40px rgba(20, 150, 255, 0.4),
-        0 0 120px rgba(60, 80, 255, 0.2),
-        inset -40px -30px 70px rgba(140, 50, 255, 0.3);
-
-      overflow: hidden;
-    }
-
-    .globe::before {
-      content: "";
-
-      position: absolute;
-
-      width: 100%;
-      height: 100%;
-
-      border-radius: 50%;
-
-      background:
-        repeating-linear-gradient(
-          0deg,
-          transparent 0px,
-          transparent 32px,
-          rgba(90, 220, 255, 0.15) 33px,
-          transparent 34px
-        );
-
-      transform: rotate(15deg);
-    }
-
-    .globe::after {
-      content: "";
-
-      position: absolute;
-
-      width: 80%;
-      height: 80%;
-
-      top: 10%;
-      left: 10%;
-
-      border: 1px solid rgba(100, 220, 255, 0.25);
-
-      border-radius: 50%;
-
-      transform: rotate(-35deg);
-    }
-
-    .orbit {
-      position: absolute;
-
-      width: 440px;
-      height: 170px;
-
-      border: 1px dashed rgba(150, 100, 255, 0.5);
-
-      border-radius: 50%;
-
-      transform: rotate(-20deg);
-    }
-
     .code-card {
-      position: absolute;
-
-      right: 0;
-      bottom: 20px;
-
-      width: 360px;
-
+      background: rgba(15,22,45,0.85);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 22px;
       padding: 20px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+      transform: rotate(2deg);
+    }
 
-      border-radius: 15px;
+    .code-top {
+      display: flex;
+      gap: 7px;
+      margin-bottom: 20px;
+    }
 
-      background: rgba(3, 8, 20, 0.95);
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #64748b;
+    }
 
-      border: 1px solid rgba(80, 160, 255, 0.3);
-
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
-
+    pre {
+      white-space: pre-wrap;
       font-family: monospace;
-
-      font-size: 13px;
-
-      line-height: 1.8;
-
-      color: #aebbd2;
+      color: #a9b8df;
+      font-size: 14px;
     }
 
-    .blue {
-      color: #4dbaff;
+    .code-blue {
+      color: #4cc9ff;
     }
 
-    .purple {
-      color: #b17aff;
+    .code-purple {
+      color: #b879ff;
     }
 
-    .green {
-      color: #5de49b;
-    }
-
-    .yellow {
-      color: #f3d36b;
+    .code-green {
+      color: #5ee6a8;
     }
 
     /* =========================
@@ -340,40 +280,55 @@
     ========================= */
 
     section {
-      padding: 100px 25px;
-
-      border-top: 1px solid rgba(120, 160, 255, 0.08);
+      padding: 100px 0;
     }
 
-    .container {
-      max-width: 1150px;
-      margin: auto;
+    .section-title {
+      margin-bottom: 45px;
     }
 
-    .label {
-      color: #40d8ff;
-
-      font-size: 13px;
-
-      font-weight: bold;
-
-      letter-spacing: 2px;
-
-      text-transform: uppercase;
+    .section-title small {
+      color: #35d7ff;
+      font-weight: 900;
+      letter-spacing: 3px;
     }
 
-    h2 {
-      font-size: 45px;
-
-      margin: 12px 0 15px;
+    .section-title h2 {
+      font-size: clamp(34px, 5vw, 55px);
+      line-height: 1.1;
+      margin-top: 8px;
     }
 
-    .description {
-      color: #9aa9c5;
+    .section-title p {
+      color: #8e9abc;
+      max-width: 650px;
+      margin-top: 15px;
+    }
 
-      max-width: 700px;
+    /* =========================
+       ABOUT
+    ========================= */
 
-      line-height: 1.8;
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .card {
+      padding: 30px;
+      border-radius: 20px;
+      background: rgba(15,22,45,0.72);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #96a2c3;
     }
 
     /* =========================
@@ -381,44 +336,36 @@
     ========================= */
 
     .skills {
-      margin-top: 40px;
-
       display: grid;
-
-      grid-template-columns:
-        repeat(5, 1fr);
-
-      gap: 15px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
     .skill {
-      padding: 25px 15px;
-
-      text-align: center;
-
-      background: rgba(10, 22, 45, 0.7);
-
-      border: 1px solid rgba(120, 160, 255, 0.15);
-
-      border-radius: 15px;
-
+      padding: 24px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.08);
       transition: 0.3s;
     }
 
     .skill:hover {
-      transform: translateY(-6px);
-
-      border-color: #329dff;
+      transform: translateY(-5px);
+      border-color: rgba(34,211,238,0.35);
     }
 
     .skill-icon {
-      font-size: 35px;
-
-      margin-bottom: 10px;
+      font-size: 30px;
+      margin-bottom: 12px;
     }
 
-    .skill small {
-      color: #8998b5;
+    .skill h3 {
+      margin-bottom: 7px;
+    }
+
+    .skill p {
+      color: #8794b6;
+      font-size: 14px;
     }
 
     /* =========================
@@ -426,85 +373,46 @@
     ========================= */
 
     .projects {
-      margin-top: 40px;
-
       display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
     .project {
-      background: rgba(10, 22, 45, 0.75);
-
-      border: 1px solid rgba(120, 160, 255, 0.15);
-
-      border-radius: 18px;
-
-      overflow: hidden;
-
+      padding: 28px;
+      border-radius: 20px;
+      background: linear-gradient(
+        145deg,
+        rgba(27,38,76,0.8),
+        rgba(12,17,36,0.8)
+      );
+      border: 1px solid rgba(255,255,255,0.08);
       transition: 0.3s;
     }
 
     .project:hover {
       transform: translateY(-7px);
-
-      border-color: #448fff;
     }
 
-    .project-image {
-      height: 170px;
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-      font-size: 60px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #071a35,
-          #24114a
-        );
+    .project-number {
+      color: #3ddcff;
+      font-weight: 900;
+      font-size: 13px;
     }
 
-    .project-content {
-      padding: 22px;
+    .project h3 {
+      margin: 12px 0;
+      font-size: 23px;
     }
 
-    .project-content p {
-      color: #96a5c0;
-
-      margin-top: 8px;
-
-      line-height: 1.6;
+    .project p {
+      color: #8f9abb;
+      margin-bottom: 20px;
     }
 
-    .tags {
-      margin-top: 15px;
-
-      display: flex;
-
-      gap: 7px;
-
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      padding: 5px 9px;
-
-      border-radius: 6px;
-
-      background: #102542;
-
-      color: #61cfff;
-
-      font-size: 11px;
+    .project a {
+      color: #5fdfff;
+      font-weight: 800;
     }
 
     /* =========================
@@ -512,26 +420,31 @@
     ========================= */
 
     .contact-box {
-      padding: 45px;
-
-      border-radius: 25px;
-
+      padding: 55px 35px;
+      border-radius: 30px;
+      text-align: center;
       background:
         linear-gradient(
-          110deg,
-          #0d2d82,
-          #35117a
+          120deg,
+          rgba(22,75,170,0.9),
+          rgba(76,32,160,0.9)
         );
+      border: 1px solid rgba(120,160,255,0.4);
+      box-shadow: 0 30px 80px rgba(30,60,180,0.18);
+    }
 
-      border: 1px solid rgba(150, 130, 255, 0.4);
+    .contact-box h2 {
+      font-size: clamp(35px, 6vw, 60px);
+      line-height: 1.05;
+      margin: 12px auto 20px;
+      max-width: 750px;
+    }
 
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: center;
-
-      gap: 30px;
+    .contact-box p {
+      color: #d2d9f0;
+      max-width: 650px;
+      margin: 0 auto 30px;
+      font-size: 17px;
     }
 
     /* =========================
@@ -539,107 +452,112 @@
     ========================= */
 
     footer {
-      padding: 50px 25px;
-
-      border-top: 1px solid rgba(120, 160, 255, 0.1);
-
-      color: #8796b1;
-
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
       text-align: center;
+      color: #7582a5;
+    }
+
+    footer strong {
+      color: #ffffff;
     }
 
     /* =========================
-       RESPONSIVE
+       MOBILE
     ========================= */
 
-    @media(max-width: 850px) {
+    @media (max-width: 800px) {
 
-      .nav-links {
-        display: none;
+      .nav {
+        min-height: 68px;
       }
 
-      .menu {
+      .menu-btn {
         display: block;
       }
 
+      .nav-links {
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px;
+        background: #090e20;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
       .hero {
+        min-height: auto;
+        padding: 80px 0 50px;
+      }
+
+      .hero-grid {
         grid-template-columns: 1fr;
-
-        padding-top: 120px;
+        gap: 45px;
       }
 
-      .visual {
-        min-height: 430px;
+      .hero h1 {
+        letter-spacing: -2px;
       }
 
-      .globe {
-        width: 310px;
-        height: 310px;
-      }
-
-      .orbit {
-        width: 350px;
+      .hero p {
+        font-size: 17px;
       }
 
       .code-card {
-        width: 320px;
-
-        right: 50%;
-
-        transform:
-          translateX(50%);
+        transform: none;
       }
 
-      .skills {
-        grid-template-columns:
-          repeat(2, 1fr);
+      section {
+        padding: 75px 0;
       }
 
+      .about,
+      .skills,
       .projects {
         grid-template-columns: 1fr;
       }
-    }
-
-    @media(max-width: 500px) {
-
-      .hero h1 {
-        font-size: 55px;
-      }
-
-      .hero-text {
-        font-size: 16px;
-      }
-
-      h2 {
-        font-size: 35px;
-      }
-
-      .globe {
-        width: 280px;
-        height: 280px;
-      }
-
-      .orbit {
-        width: 320px;
-      }
-
-      .code-card {
-        width: 300px;
-
-        font-size: 10px;
-      }
-
-      .skills {
-        grid-template-columns:
-          repeat(2, 1fr);
-      }
 
       .contact-box {
+        padding: 45px 25px;
+      }
+    }
+
+    @media (max-width: 450px) {
+
+      .container {
+        width: 88%;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .badge {
+        font-size: 11px;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .buttons {
         flex-direction: column;
+      }
 
-        align-items: flex-start;
+      .btn {
+        width: 100%;
+      }
 
-        padding: 30px;
+      pre {
+        font-size: 12px;
       }
     }
   </style>
@@ -647,542 +565,405 @@
 
 <body>
 
-<!-- =========================
-     NAVIGATION
-========================= -->
-
-<header>
-
-  <nav>
-
-    <a href="#accueil" class="logo">
-      <span class="logo-code">&lt;/&gt;</span>
-      AMEVOR Daniel
-    </a>
-
-    <div class="nav-links">
-
-      <a href="#accueil">Accueil</a>
-
-      <a href="#apropos">À propos</a>
-
-      <a href="#competences">Compétences</a>
-
-      <a href="#projets">Projets</a>
-
-      <a href="#contact">Contact</a>
-
-    </div>
-
-    <div class="menu">☰</div>
-
-  </nav>
-
-</header>
-
-
-<!-- =========================
-     ACCUEIL
-========================= -->
-
-<main>
-
-<section id="accueil">
-
-  <div class="hero">
-
-    <div>
-
-      <div class="badge">
-        ● DÉVELOPPEUR • CRÉATEUR • INNOVATEUR
-      </div>
-
-      <h1>
-        Bonjour,<br>
-        je suis
-        <span class="gradient">
-          Daniel.
-        </span>
-      </h1>
-
-      <p class="hero-text">
-        Je construis des expériences numériques modernes,
-        rapides et élégantes. Mon objectif :
-        transformer une idée en un projet qui fonctionne vraiment.
-      </p>
-
-      <div class="buttons">
-
-        <a href="#projets"
-           class="btn btn-primary">
-          Découvrir mes projets →
-        </a>
-
-        <a href="#apropos"
-           class="btn btn-secondary">
-          En savoir plus
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- GLOBE -->
-
-    <div class="visual">
-
-      <div class="globe"></div>
-
-      <div class="orbit"></div>
-
-      <div class="code-card">
-
-        <span class="blue">const</span>
-        developer = {
-
-        <br>
-
-        &nbsp;&nbsp;name:
-        <span class="yellow">
-          "AMEVOR Daniel"
-        </span>,
-
-        <br>
-
-        &nbsp;&nbsp;role:
-        <span class="purple">
-          "Web Developer"
-        </span>,
-
-        <br>
-
-        &nbsp;&nbsp;skills: [
-
-        <span class="green">
-          "HTML"
-        </span>,
-
-        <span class="green">
-          "CSS"
-        </span>,
-
-        <span class="green">
-          "JavaScript"
-        </span>
-
-        ],
-
-        <br>
-
-        &nbsp;&nbsp;mission:
-
-        <span class="yellow">
-          "Build the future"
-        </span>
-
-        <br>
-
-        };
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     À PROPOS
-========================= -->
-
-<section id="apropos">
-
-  <div class="container">
-
-    <div class="label">
-      À PROPOS
-    </div>
-
-    <h2>
-      Passionné par
-      <span class="gradient">
-        le code.
-      </span>
-    </h2>
-
-    <p class="description">
-
-      Je suis AMEVOR Daniel, passionné par
-      l'informatique et le développement.
-
-      Mon objectif est d'apprendre constamment,
-      construire des projets utiles et devenir
-      un développeur professionnel.
-
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     COMPÉTENCES
-========================= -->
-
-<section id="competences">
-
-  <div class="container">
-
-    <div class="label">
-      TECHNOLOGIES
-    </div>
-
-    <h2>
-      Mes
-      <span class="gradient">
-        compétences
-      </span>
-    </h2>
-
-    <p class="description">
-      Les technologies que je développe progressivement.
-    </p>
-
-
-    <div class="skills">
-
-      <div class="skill">
-        <div class="skill-icon">🌐</div>
-        <strong>HTML5</strong>
-        <br>
-        <small>Structure Web</small>
-      </div>
-
-      <div class="skill">
-        <div class="skill-icon">🎨</div>
-        <strong>CSS3</strong>
-        <br>
-        <small>Design</small>
-      </div>
-
-      <div class="skill">
-        <div class="skill-icon">⚡</div>
-        <strong>JavaScript</strong>
-        <br>
-        <small>Web</small>
-      </div>
-
-      <div class="skill">
-        <div class="skill-icon">⚛️</div>
-        <strong>React</strong>
-        <br>
-        <small>Interface</small>
-      </div>
-
-      <div class="skill">
-        <div class="skill-icon">🟢</div>
-        <strong>Node.js</strong>
-        <br>
-        <small>Backend</small>
-      </div>
-
-      <div class="skill">
-        <div class="skill-icon">🐍</div>
-        <strong>Python</strong>
-        <br>
-        <small>Programmation</small>
-      </div>
-
-      <div class="skill">
-        <div class="skill-icon">🔧</div>
-        <strong>Git</strong>
-        <br>
-        <small>Versioning</small>
-      </div>
-
-      <div class="skill">
-        <div class="skill-icon">☁️</div>
-        <strong>Cloud</strong>
-        <br>
-        <small>Déploiement</small>
-      </div>
-
-      <div class="skill">
-        <div class="skill-icon">🗄️</div>
-        <strong>Database</strong>
-        <br>
-        <small>Données</small>
-      </div>
-
-      <div class="skill">
-        <div class="skill-icon">🚀</div>
-        <strong>GitHub</strong>
-        <br>
-        <small>Projets</small>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     PROJETS
-========================= -->
-
-<section id="projets">
-
-  <div class="container">
-
-    <div class="label">
-      PORTFOLIO
-    </div>
-
-    <h2>
-      Mes
-      <span class="gradient">
-        projets
-      </span>
-    </h2>
-
-    <p class="description">
-      Mes réalisations et mes futurs projets.
-    </p>
-
-
-    <div class="projects">
-
-      <article class="project">
-
-        <div class="project-image">
-          🛒
-        </div>
-
-        <div class="project-content">
-
-          <h3>
-            E-Commerce
-          </h3>
-
-          <p>
-            Une boutique en ligne moderne
-            avec une interface professionnelle.
-          </p>
-
-          <div class="tags">
-
-            <span class="tag">
-              HTML
-            </span>
-
-            <span class="tag">
-              CSS
-            </span>
-
-            <span class="tag">
-              JavaScript
-            </span>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <article class="project">
-
-        <div class="project-image">
-          📊
-        </div>
-
-        <div class="project-content">
-
-          <h3>
-            Task Manager
-          </h3>
-
-          <p>
-            Application permettant de gérer
-            et organiser ses tâches.
-          </p>
-
-          <div class="tags">
-
-            <span class="tag">
-              JavaScript
-            </span>
-
-            <span class="tag">
-              React
-            </span>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <article class="project">
-
-        <div class="project-image">
-          💻
-        </div>
-
-        <div class="project-content">
-
-          <h3>
-            Mon Portfolio
-          </h3>
-
-          <p>
-            Mon portfolio personnel pour
-            présenter mon parcours et mes projets.
-          </p>
-
-          <div class="tags">
-
-            <span class="tag">
-              HTML
-            </span>
-
-            <span class="tag">
-              CSS
-            </span>
-
-            <span class="tag">
-              GitHub
-            </span>
-
-          </div>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section id="contact">
-
-  <div class="container">
-
-    <div class="contact-box">
-
-      <div>
-
-        <div class="label">
-          CONTACT
-        </div>
-
-        <h2>
-          Construisons
-          <span class="gradient">
-            quelque chose.
-          </span>
-        </h2>
-
-        <p class="description">
-          Une idée, un projet ou une opportunité ?
-          N'hésite pas à me contacter.
-        </p>
-
-      </div>
-
-      <a
-        class="btn btn-primary"
-        href="mailto:amevor.daniel.dev@gmail.com">
-
-        Me contacter →
-
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <header>
+    <div class="container nav">
+
+      <a href="#accueil" class="logo">
+        AMEVOR Daniel
       </a>
 
+      <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#accueil" onclick="closeMenu()">Accueil</a>
+        <a href="#apropos" onclick="closeMenu()">À propos</a>
+        <a href="#competences" onclick="closeMenu()">Compétences</a>
+        <a href="#projets" onclick="closeMenu()">Projets</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main>
+
+    <section class="hero" id="accueil">
+
+      <div class="container hero-grid">
+
+        <div>
+
+          <div class="badge">
+            ● DÉVELOPPEUR • CRÉATEUR • INNOVATEUR
+          </div>
+
+          <h1>
+            Bonjour,<br>
+            je suis <span class="gradient">Daniel.</span>
+          </h1>
+
+          <p>
+            Je construis des expériences numériques modernes,
+            rapides et élégantes. Mon objectif : transformer
+            une idée en un projet qui fonctionne vraiment.
+          </p>
+
+          <div class="buttons">
+
+            <a href="#projets" class="btn btn-primary">
+              Découvrir mes projets →
+            </a>
+
+            <a href="#contact" class="btn btn-secondary">
+              Me contacter
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <div class="code-top">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+
+<pre><span class="code-purple">const</span> developer = {
+  name: <span class="code-green">"AMEVOR Daniel"</span>,
+  role: <span class="code-green">"Développeur Web"</span>,
+  passion: <span class="code-green">"Technology"</span>,
+
+  skills: [
+    <span class="code-green">"HTML"</span>,
+    <span class="code-green">"CSS"</span>,
+    <span class="code-green">"JavaScript"</span>,
+    <span class="code-green">"Git & GitHub"</span>
+  ],
+
+  goal: <span class="code-green">"Build the future 🚀"</span>
+};</pre>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="apropos">
+
+      <div class="container">
+
+        <div class="section-title">
+          <small>01 — À PROPOS</small>
+          <h2>Créer. Apprendre. Évoluer.</h2>
+          <p>
+            Je développe progressivement mes compétences
+            dans le monde de l'informatique et du développement.
+          </p>
+        </div>
+
+        <div class="about">
+
+          <div class="card">
+            <h3>👨‍💻 Qui suis-je ?</h3>
+            <p>
+              Je suis AMEVOR Daniel, passionné par la technologie,
+              la programmation et la création de solutions numériques.
+              Je transforme mes connaissances en projets concrets
+              afin de progresser chaque jour.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>🎯 Ma vision</h3>
+            <p>
+              Devenir un développeur professionnel capable de créer
+              des applications et des sites modernes, accessibles,
+              performants et utiles.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="competences">
+
+      <div class="container">
+
+        <div class="section-title">
+          <small>02 — COMPÉTENCES</small>
+          <h2>Ce que j'apprends.</h2>
+          <p>
+            Des technologies essentielles pour construire
+            des projets web solides.
+          </p>
+        </div>
+
+        <div class="skills">
+
+          <div class="skill">
+            <div class="skill-icon">🌐</div>
+            <h3>HTML</h3>
+            <p>
+              Structure propre, accessible et sémantique
+              des pages web.
+            </p>
+          </div>
+
+          <div class="skill">
+            <div class="skill-icon">🎨</div>
+            <h3>CSS</h3>
+            <p>
+              Interfaces modernes, responsive design,
+              animations et mise en page.
+            </p>
+          </div>
+
+          <div class="skill">
+            <div class="skill-icon">⚡</div>
+            <h3>JavaScript</h3>
+            <p>
+              Interactivité, logique et fonctionnalités
+              dynamiques pour les applications web.
+            </p>
+          </div>
+
+          <div class="skill">
+            <div class="skill-icon">🐙</div>
+            <h3>Git & GitHub</h3>
+            <p>
+              Gestion du code, versions, projets
+              et collaboration.
+            </p>
+          </div>
+
+          <div class="skill">
+            <div class="skill-icon">📱</div>
+            <h3>Responsive Design</h3>
+            <p>
+              Sites adaptés aux téléphones, tablettes
+              et ordinateurs.
+            </p>
+          </div>
+
+          <div class="skill">
+            <div class="skill-icon">🚀</div>
+            <h3>Développement</h3>
+            <p>
+              Construction de projets réels pour
+              développer mon expérience.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projets">
+
+      <div class="container">
+
+        <div class="section-title">
+          <small>03 — PROJETS</small>
+          <h2>Mes réalisations.</h2>
+          <p>
+            Quelques projets qui montrent mon évolution
+            en développement.
+          </p>
+        </div>
+
+        <div class="projects">
+
+          <article class="project">
+
+            <div class="project-number">
+              PROJET 01
+            </div>
+
+            <h3>Portfolio personnel</h3>
+
+            <p>
+              Mon portfolio professionnel développé
+              avec HTML, CSS et JavaScript.
+            </p>
+
+            <a href="#accueil">
+              Voir le projet →
+            </a>
+
+          </article>
+
+
+          <article class="project">
+
+            <div class="project-number">
+              PROJET 02
+            </div>
+
+            <h3>Projet Web</h3>
+
+            <p>
+              Une future application web permettant
+              de mettre en pratique mes compétences.
+            </p>
+
+            <a href="#contact">
+              Bientôt disponible →
+            </a>
+
+          </article>
+
+
+          <article class="project">
+
+            <div class="project-number">
+              PROJET 03
+            </div>
+
+            <h3>Application JavaScript</h3>
+
+            <p>
+              Un projet interactif destiné à améliorer
+              ma maîtrise de JavaScript.
+            </p>
+
+            <a href="#contact">
+              En développement →
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <small>
+            CONTACT
+          </small>
+
+          <h2>
+            Construisons
+            <span class="gradient">quelque chose.</span>
+          </h2>
+
+          <p>
+            Une idée, un projet ou une opportunité ?
+            N'hésite pas à me contacter.
+          </p>
+
+          <div class="buttons" style="justify-content:center;">
+
+            <a
+              href="mailto:tonemail@example.com"
+              class="btn btn-primary"
+            >
+              Me contacter →
+            </a>
+
+            <a
+              href="https://github.com/danielamevor856-cyber"
+              target="_blank"
+              class="btn btn-secondary"
+            >
+              GitHub
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container">
+
+      © 2026 <strong>AMEVOR Daniel</strong> — Daniel Dev
+
+      <br>
+
+      Code • Créer • Innover 🚀
+
     </div>
 
-  </div>
-
-</section>
-
-</main>
+  </footer>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
 
-<footer>
+  <script>
 
-  <p>
-    © 2026 AMEVOR Daniel — Daniel Dev
-  </p>
-
-  <p>
-    Code • Créer • Innover 🚀
-  </p>
-
-</footer>
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
-<script>
-
-  const menu =
-    document.querySelector(".menu");
-
-  const links =
-    document.querySelector(".nav-links");
-
-
-  menu.addEventListener("click", function () {
-
-    if (
-      links.style.display === "flex"
-    ) {
-
-      links.style.display = "none";
-
-    } else {
-
-      links.style.display = "flex";
-
-      links.style.flexDirection = "column";
-
-      links.style.position = "absolute";
-
-      links.style.top = "75px";
-
-      links.style.left = "0";
-
-      links.style.width = "100%";
-
-      links.style.padding = "25px";
-
-      links.style.background =
-        "rgba(5,8,22,0.98)";
-
+    function toggleMenu() {
+      document
+        .getElementById("navLinks")
+        .classList.toggle("active");
     }
 
-  });
+    function closeMenu() {
+      document
+        .getElementById("navLinks")
+        .classList.remove("active");
+    }
 
-</script>
+  </script>
 
 </body>
   </html>
