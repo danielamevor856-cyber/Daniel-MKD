@@ -1,4 +1,1191 @@
-<img src="daniel-dev.png" alt="AMEVOR Daniel - Daniel Dev.png">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Portfolio professionnel de AMEVOR Daniel, développeur web.">
+
+  <title>AMEVOR Daniel | Daniel Dev</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050816;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      background: rgba(5, 8, 22, 0.85);
+      backdrop-filter: blur(15px);
+
+      border-bottom: 1px solid rgba(100, 160, 255, 0.15);
+    }
+
+    nav {
+      max-width: 1150px;
+      height: 75px;
+      margin: auto;
+
+      padding: 0 25px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .logo-code {
+      color: #20d9ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      color: #b8c5df;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #4fc3ff;
+    }
+
+    .menu {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+
+      max-width: 1150px;
+      margin: auto;
+
+      padding: 140px 25px 80px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      align-items: center;
+      gap: 50px;
+    }
+
+    .badge {
+      display: inline-block;
+
+      padding: 10px 17px;
+
+      border-radius: 50px;
+
+      border: 1px solid rgba(30, 210, 255, 0.3);
+
+      color: #53ddff;
+
+      background: rgba(30, 210, 255, 0.05);
+
+      font-weight: bold;
+      font-size: 13px;
+
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: clamp(55px, 7vw, 90px);
+      line-height: 0.95;
+
+      margin: 25px 0;
+    }
+
+    .gradient {
+      background: linear-gradient(
+        90deg,
+        #159cff,
+        #7167ff,
+        #c148ff
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .hero-text {
+      color: #9aa9c5;
+
+      font-size: 18px;
+
+      line-height: 1.8;
+
+      max-width: 620px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+
+      display: flex;
+      gap: 15px;
+
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+
+      padding: 16px 24px;
+
+      border-radius: 12px;
+
+      font-weight: bold;
+
+      border: 1px solid rgba(120, 160, 255, 0.2);
+
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(
+        135deg,
+        #168cff,
+        #8057ff
+      );
+
+      box-shadow:
+        0 15px 45px rgba(60, 90, 255, 0.3);
+    }
+
+    .btn-secondary {
+      background: rgba(10, 20, 45, 0.7);
+    }
+
+    /* =========================
+       GLOBE
+    ========================= */
+
+    .visual {
+      min-height: 500px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: relative;
+    }
+
+    .globe {
+      width: 380px;
+      height: 380px;
+
+      border-radius: 50%;
+
+      position: relative;
+
+      background:
+        radial-gradient(
+          circle at 35% 30%,
+          #58e7ff,
+          #1978ff 22%,
+          #092b67 48%,
+          #020712 72%
+        );
+
+      border: 2px solid rgba(50, 190, 255, 0.6);
+
+      box-shadow:
+        0 0 40px rgba(20, 150, 255, 0.4),
+        0 0 120px rgba(60, 80, 255, 0.2),
+        inset -40px -30px 70px rgba(140, 50, 255, 0.3);
+
+      overflow: hidden;
+    }
+
+    .globe::before {
+      content: "";
+
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+
+      border-radius: 50%;
+
+      background:
+        repeating-linear-gradient(
+          0deg,
+          transparent 0px,
+          transparent 32px,
+          rgba(90, 220, 255, 0.15) 33px,
+          transparent 34px
+        );
+
+      transform: rotate(15deg);
+    }
+
+    .globe::after {
+      content: "";
+
+      position: absolute;
+
+      width: 80%;
+      height: 80%;
+
+      top: 10%;
+      left: 10%;
+
+      border: 1px solid rgba(100, 220, 255, 0.25);
+
+      border-radius: 50%;
+
+      transform: rotate(-35deg);
+    }
+
+    .orbit {
+      position: absolute;
+
+      width: 440px;
+      height: 170px;
+
+      border: 1px dashed rgba(150, 100, 255, 0.5);
+
+      border-radius: 50%;
+
+      transform: rotate(-20deg);
+    }
+
+    .code-card {
+      position: absolute;
+
+      right: 0;
+      bottom: 20px;
+
+      width: 360px;
+
+      padding: 20px;
+
+      border-radius: 15px;
+
+      background: rgba(3, 8, 20, 0.95);
+
+      border: 1px solid rgba(80, 160, 255, 0.3);
+
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+
+      font-family: monospace;
+
+      font-size: 13px;
+
+      line-height: 1.8;
+
+      color: #aebbd2;
+    }
+
+    .blue {
+      color: #4dbaff;
+    }
+
+    .purple {
+      color: #b17aff;
+    }
+
+    .green {
+      color: #5de49b;
+    }
+
+    .yellow {
+      color: #f3d36b;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      padding: 100px 25px;
+
+      border-top: 1px solid rgba(120, 160, 255, 0.08);
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .label {
+      color: #40d8ff;
+
+      font-size: 13px;
+
+      font-weight: bold;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 45px;
+
+      margin: 12px 0 15px;
+    }
+
+    .description {
+      color: #9aa9c5;
+
+      max-width: 700px;
+
+      line-height: 1.8;
+    }
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills {
+      margin-top: 40px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(5, 1fr);
+
+      gap: 15px;
+    }
+
+    .skill {
+      padding: 25px 15px;
+
+      text-align: center;
+
+      background: rgba(10, 22, 45, 0.7);
+
+      border: 1px solid rgba(120, 160, 255, 0.15);
+
+      border-radius: 15px;
+
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      transform: translateY(-6px);
+
+      border-color: #329dff;
+    }
+
+    .skill-icon {
+      font-size: 35px;
+
+      margin-bottom: 10px;
+    }
+
+    .skill small {
+      color: #8998b5;
+    }
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .projects {
+      margin-top: 40px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+    .project {
+      background: rgba(10, 22, 45, 0.75);
+
+      border: 1px solid rgba(120, 160, 255, 0.15);
+
+      border-radius: 18px;
+
+      overflow: hidden;
+
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-7px);
+
+      border-color: #448fff;
+    }
+
+    .project-image {
+      height: 170px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      font-size: 60px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #071a35,
+          #24114a
+        );
+    }
+
+    .project-content {
+      padding: 22px;
+    }
+
+    .project-content p {
+      color: #96a5c0;
+
+      margin-top: 8px;
+
+      line-height: 1.6;
+    }
+
+    .tags {
+      margin-top: 15px;
+
+      display: flex;
+
+      gap: 7px;
+
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      padding: 5px 9px;
+
+      border-radius: 6px;
+
+      background: #102542;
+
+      color: #61cfff;
+
+      font-size: 11px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-box {
+      padding: 45px;
+
+      border-radius: 25px;
+
+      background:
+        linear-gradient(
+          110deg,
+          #0d2d82,
+          #35117a
+        );
+
+      border: 1px solid rgba(150, 130, 255, 0.4);
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 30px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 50px 25px;
+
+      border-top: 1px solid rgba(120, 160, 255, 0.1);
+
+      color: #8796b1;
+
+      text-align: center;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width: 850px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .menu {
+        display: block;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+
+        padding-top: 120px;
+      }
+
+      .visual {
+        min-height: 430px;
+      }
+
+      .globe {
+        width: 310px;
+        height: 310px;
+      }
+
+      .orbit {
+        width: 350px;
+      }
+
+      .code-card {
+        width: 320px;
+
+        right: 50%;
+
+        transform:
+          translateX(50%);
+      }
+
+      .skills {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width: 500px) {
+
+      .hero h1 {
+        font-size: 55px;
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      h2 {
+        font-size: 35px;
+      }
+
+      .globe {
+        width: 280px;
+        height: 280px;
+      }
+
+      .orbit {
+        width: 320px;
+      }
+
+      .code-card {
+        width: 300px;
+
+        font-size: 10px;
+      }
+
+      .skills {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .contact-box {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+
+  <nav>
+
+    <a href="#accueil" class="logo">
+      <span class="logo-code">&lt;/&gt;</span>
+      AMEVOR Daniel
+    </a>
+
+    <div class="nav-links">
+
+      <a href="#accueil">Accueil</a>
+
+      <a href="#apropos">À propos</a>
+
+      <a href="#competences">Compétences</a>
+
+      <a href="#projets">Projets</a>
+
+      <a href="#contact">Contact</a>
+
+    </div>
+
+    <div class="menu">☰</div>
+
+  </nav>
+
+</header>
+
+
+<!-- =========================
+     ACCUEIL
+========================= -->
+
+<main>
+
+<section id="accueil">
+
+  <div class="hero">
+
+    <div>
+
+      <div class="badge">
+        ● DÉVELOPPEUR • CRÉATEUR • INNOVATEUR
+      </div>
+
+      <h1>
+        Bonjour,<br>
+        je suis
+        <span class="gradient">
+          Daniel.
+        </span>
+      </h1>
+
+      <p class="hero-text">
+        Je construis des expériences numériques modernes,
+        rapides et élégantes. Mon objectif :
+        transformer une idée en un projet qui fonctionne vraiment.
+      </p>
+
+      <div class="buttons">
+
+        <a href="#projets"
+           class="btn btn-primary">
+          Découvrir mes projets →
+        </a>
+
+        <a href="#apropos"
+           class="btn btn-secondary">
+          En savoir plus
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- GLOBE -->
+
+    <div class="visual">
+
+      <div class="globe"></div>
+
+      <div class="orbit"></div>
+
+      <div class="code-card">
+
+        <span class="blue">const</span>
+        developer = {
+
+        <br>
+
+        &nbsp;&nbsp;name:
+        <span class="yellow">
+          "AMEVOR Daniel"
+        </span>,
+
+        <br>
+
+        &nbsp;&nbsp;role:
+        <span class="purple">
+          "Web Developer"
+        </span>,
+
+        <br>
+
+        &nbsp;&nbsp;skills: [
+
+        <span class="green">
+          "HTML"
+        </span>,
+
+        <span class="green">
+          "CSS"
+        </span>,
+
+        <span class="green">
+          "JavaScript"
+        </span>
+
+        ],
+
+        <br>
+
+        &nbsp;&nbsp;mission:
+
+        <span class="yellow">
+          "Build the future"
+        </span>
+
+        <br>
+
+        };
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     À PROPOS
+========================= -->
+
+<section id="apropos">
+
+  <div class="container">
+
+    <div class="label">
+      À PROPOS
+    </div>
+
+    <h2>
+      Passionné par
+      <span class="gradient">
+        le code.
+      </span>
+    </h2>
+
+    <p class="description">
+
+      Je suis AMEVOR Daniel, passionné par
+      l'informatique et le développement.
+
+      Mon objectif est d'apprendre constamment,
+      construire des projets utiles et devenir
+      un développeur professionnel.
+
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     COMPÉTENCES
+========================= -->
+
+<section id="competences">
+
+  <div class="container">
+
+    <div class="label">
+      TECHNOLOGIES
+    </div>
+
+    <h2>
+      Mes
+      <span class="gradient">
+        compétences
+      </span>
+    </h2>
+
+    <p class="description">
+      Les technologies que je développe progressivement.
+    </p>
+
+
+    <div class="skills">
+
+      <div class="skill">
+        <div class="skill-icon">🌐</div>
+        <strong>HTML5</strong>
+        <br>
+        <small>Structure Web</small>
+      </div>
+
+      <div class="skill">
+        <div class="skill-icon">🎨</div>
+        <strong>CSS3</strong>
+        <br>
+        <small>Design</small>
+      </div>
+
+      <div class="skill">
+        <div class="skill-icon">⚡</div>
+        <strong>JavaScript</strong>
+        <br>
+        <small>Web</small>
+      </div>
+
+      <div class="skill">
+        <div class="skill-icon">⚛️</div>
+        <strong>React</strong>
+        <br>
+        <small>Interface</small>
+      </div>
+
+      <div class="skill">
+        <div class="skill-icon">🟢</div>
+        <strong>Node.js</strong>
+        <br>
+        <small>Backend</small>
+      </div>
+
+      <div class="skill">
+        <div class="skill-icon">🐍</div>
+        <strong>Python</strong>
+        <br>
+        <small>Programmation</small>
+      </div>
+
+      <div class="skill">
+        <div class="skill-icon">🔧</div>
+        <strong>Git</strong>
+        <br>
+        <small>Versioning</small>
+      </div>
+
+      <div class="skill">
+        <div class="skill-icon">☁️</div>
+        <strong>Cloud</strong>
+        <br>
+        <small>Déploiement</small>
+      </div>
+
+      <div class="skill">
+        <div class="skill-icon">🗄️</div>
+        <strong>Database</strong>
+        <br>
+        <small>Données</small>
+      </div>
+
+      <div class="skill">
+        <div class="skill-icon">🚀</div>
+        <strong>GitHub</strong>
+        <br>
+        <small>Projets</small>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PROJETS
+========================= -->
+
+<section id="projets">
+
+  <div class="container">
+
+    <div class="label">
+      PORTFOLIO
+    </div>
+
+    <h2>
+      Mes
+      <span class="gradient">
+        projets
+      </span>
+    </h2>
+
+    <p class="description">
+      Mes réalisations et mes futurs projets.
+    </p>
+
+
+    <div class="projects">
+
+      <article class="project">
+
+        <div class="project-image">
+          🛒
+        </div>
+
+        <div class="project-content">
+
+          <h3>
+            E-Commerce
+          </h3>
+
+          <p>
+            Une boutique en ligne moderne
+            avec une interface professionnelle.
+          </p>
+
+          <div class="tags">
+
+            <span class="tag">
+              HTML
+            </span>
+
+            <span class="tag">
+              CSS
+            </span>
+
+            <span class="tag">
+              JavaScript
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="project">
+
+        <div class="project-image">
+          📊
+        </div>
+
+        <div class="project-content">
+
+          <h3>
+            Task Manager
+          </h3>
+
+          <p>
+            Application permettant de gérer
+            et organiser ses tâches.
+          </p>
+
+          <div class="tags">
+
+            <span class="tag">
+              JavaScript
+            </span>
+
+            <span class="tag">
+              React
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="project">
+
+        <div class="project-image">
+          💻
+        </div>
+
+        <div class="project-content">
+
+          <h3>
+            Mon Portfolio
+          </h3>
+
+          <p>
+            Mon portfolio personnel pour
+            présenter mon parcours et mes projets.
+          </p>
+
+          <div class="tags">
+
+            <span class="tag">
+              HTML
+            </span>
+
+            <span class="tag">
+              CSS
+            </span>
+
+            <span class="tag">
+              GitHub
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+  <div class="container">
+
+    <div class="contact-box">
+
+      <div>
+
+        <div class="label">
+          CONTACT
+        </div>
+
+        <h2>
+          Construisons
+          <span class="gradient">
+            quelque chose.
+          </span>
+        </h2>
+
+        <p class="description">
+          Une idée, un projet ou une opportunité ?
+          N'hésite pas à me contacter.
+        </p>
+
+      </div>
+
+      <a
+        class="btn btn-primary"
+        href="mailto:amevor.daniel.dev@gmail.com">
+
+        Me contacter →
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <p>
+    © 2026 AMEVOR Daniel — Daniel Dev
+  </p>
+
+  <p>
+    Code • Créer • Innover 🚀
+  </p>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+  const menu =
+    document.querySelector(".menu");
+
+  const links =
+    document.querySelector(".nav-links");
+
+
+  menu.addEventListener("click", function () {
+
+    if (
+      links.style.display === "flex"
+    ) {
+
+      links.style.display = "none";
+
+    } else {
+
+      links.style.display = "flex";
+
+      links.style.flexDirection = "column";
+
+      links.style.position = "absolute";
+
+      links.style.top = "75px";
+
+      links.style.left = "0";
+
+      links.style.width = "100%";
+
+      links.style.padding = "25px";
+
+      links.style.background =
+        "rgba(5,8,22,0.98)";
+
+    }
+
+  });
+
+</script>
+
+</body>
+  </html>
   
 
   
